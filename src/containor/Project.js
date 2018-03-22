@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
-import AddIterationForm from '../component/AddIterationForm'
+import AddStory from '../component/AddIStory'
 import {addNewIterationAction, editTheItarationAction} from "../action/actions";
-import ShowIterations from './ShowIterarions'
+import ShowIterations from './ShowIterations'
 import {connect} from 'react-redux'
 
-class Iterations extends Component{
+class ShowItratins extends Component{
 
     constructor(props) {
         super(props)
@@ -20,7 +20,7 @@ class Iterations extends Component{
     render(){
         return(
             <div>
-                <AddIterationForm onSubmit={this.handleAddIteration} />
+                <AddStory onSubmit={this.handleAddIteration} />
                 <ShowIterations/>
             </div>
         )
@@ -30,4 +30,4 @@ class Iterations extends Component{
 
 
 
-export default connect()(Iterations)
+export default connect()(ShowIterations)

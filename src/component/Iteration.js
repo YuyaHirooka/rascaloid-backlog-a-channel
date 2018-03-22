@@ -11,4 +11,4 @@ const Stories=({iterations,onClickIteration})=>(
     </ul>
 )
 
-export default Story
+export default Stories

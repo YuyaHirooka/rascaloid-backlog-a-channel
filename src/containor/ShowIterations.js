@@ -1,5 +1,7 @@
 import {connect} from 'react-redux'
-import Iterations from "../component/Iteration";
+//import Iterations from "../component/Iteration"
+ import ShowIterationsWithTree from "../component/ShowIterationsWithTree"
+
 // todo:add taggle
 
 
@@ -26,6 +28,6 @@ const editorControl=dispatch=>{
 const ShowIterations=connect(
     mapStateItarations,
     editorControl,
-)(Iterations)
+)(ShowIterationsWithTree)
 
 export default ShowIterations
