@@ -1,8 +1,8 @@
 //import fetch from 'cross-fetch'
 
-export const ADD_NEW_ITERATION = 'ADD_NEW_ITERATION'
+export const ADD_STORY = 'ADD_STORY'
 export const SORT_STORY ='SORT_STORY'
-
+export const ADD_ITERATION = 'ADD_ITERATION'
 //todo:id採番について考える。
 //todo:projectについて考える。
 let iterationId=0
@@ -14,7 +14,7 @@ let iterationId=0
 export function addNewIterationAction(title,startDate,expireDate){
     return{
         //todo:projectId
-        type:ADD_NEW_ITERATION,
+        type:ADD_STORY,
         id:iterationId++,
         title,
         startDate,
@@ -27,6 +27,10 @@ export function sortStory(sortedStory) {
         type:SORT_STORY,
         sortedStory
     }
+}
+
+export function addIteration(iterationTitle, iterationId) {
+    type:ADD_ITERATION
 }
 
 

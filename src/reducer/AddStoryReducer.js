@@ -1,13 +1,13 @@
 import {
-    ADD_NEW_ITERATION,
+    ADD_STORY,
     SORT_STORY
 } from "../action/actions";
 
-function addIterations(state = {
+function stories(state = {
     story: [],
 }, action) {
     switch (action.type) {
-        case ADD_NEW_ITERATION:
+        case ADD_STORY:
             return Object.assign({}, state, {
                 projectId: 1,
                 story: [
@@ -31,4 +31,4 @@ function addIterations(state = {
 }
 
 
-export default addIterations
+export default stories

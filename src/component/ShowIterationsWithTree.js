@@ -3,9 +3,8 @@ import 'react-sortable-tree/style.css'
 import SortableTree from 'react-sortable-tree'
 
 
-const ShowIterationsWithTree = ({iterations, onChangeHandle}) => {
-    console.log('bbbbbbbbb')
-    console.log(iterations)
+const ShowIterationsWithTree = ({stories, onChangeHandle}) => {
+
     const externalNodeType = 'yourNodeType';
     return (
         <div
@@ -17,7 +16,7 @@ const ShowIterationsWithTree = ({iterations, onChangeHandle}) => {
             }}
         >
             <SortableTree
-                treeData={iterations.story}
+                treeData={stories.story}
                 onChange={story => onChangeHandle(story)}
                 dndType={externalNodeType}
                 maxDepth={0}

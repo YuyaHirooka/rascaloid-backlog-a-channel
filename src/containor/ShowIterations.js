@@ -13,7 +13,7 @@ const getIterations=iterations=>{
 
 const mapStateItarations=state=>{
     return{
-        iterations:getIterations(state.AddIterationReducer)
+        stories:getIterations(state.stories)
     }
 }
 
