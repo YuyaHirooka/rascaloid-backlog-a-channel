@@ -4,7 +4,7 @@ import {Field, reduxForm} from 'redux-form';
 //import addIterations from "../reducer/addIterations";
 
 
-const AddNewIteration = props => {
+const AddStory = props => {
 
     const {handleSubmit, pristine,reset, submitting} = props
     return (
@@ -13,6 +13,7 @@ const AddNewIteration = props => {
                 <label>title</label>
                 <Field
                     name="title"
+
                     component="input"
                     type="text"
                     placeholder="Title"
@@ -48,4 +49,4 @@ const AddNewIteration = props => {
 
 export default reduxForm({
     form: 'newIteration',
-})(AddNewIteration)
+})(AddStory)

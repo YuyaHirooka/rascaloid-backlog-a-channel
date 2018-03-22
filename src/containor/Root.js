@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Provider} from 'react-redux'
 import config from '../config'
-import Project from './Iterations'
+import Project from './Project'
 
 
 const store = config()

@@ -1,10 +1,10 @@
 import React,{Component} from 'react'
 import AddStory from '../component/AddIStory'
-import {addNewIterationAction, editTheItarationAction} from "../action/actions";
+import {addNewIterationAction} from "../action/actions";
 import ShowIterations from './ShowIterations'
 import {connect} from 'react-redux'
 
-class ShowItratins extends Component{
+class Project extends Component{
 
     constructor(props) {
         super(props)
@@ -30,4 +30,4 @@ class ShowItratins extends Component{
 
 
 
-export default connect()(ShowIterations)
+export default connect()(Project)

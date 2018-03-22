@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 //import Iterations from "../component/Iteration"
  import ShowIterationsWithTree from "../component/ShowIterationsWithTree"
+import {sortStory} from '../action/actions'
 
 // todo:add taggle
 
@@ -16,18 +17,20 @@ const mapStateItarations=state=>{
     }
 }
 
-const editorControl=dispatch=>{
+const mapDispatchTodoProps=dispatch=>{
     return{
-        onClickIteration:iterationId=>{
-            //todo:クリックで編集が行えるようにする。
-            dispatch()
+        onChangeHandle:sortedStory=>{
+            console.log('sorted')
+            console.log(sortedStory)
+            dispatch(sortStory(sortedStory))
         }
     }
 }
 
 const ShowIterations=connect(
     mapStateItarations,
-    editorControl,
+    mapDispatchTodoProps,
 )(ShowIterationsWithTree)
+
 
 export default ShowIterations
