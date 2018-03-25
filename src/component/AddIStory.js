@@ -1,37 +1,35 @@
 import React from 'react'
-//import {connect} from 'react-redux'
 import {Field, reduxForm} from 'redux-form';
-//import addIterations from "../reducer/addIterations";
 
 
-const AddStory = props => {
+ const AddStory =props=>{
+        const { onHandleSubmit,pristine,reset, submitting,iterationId} = props
 
-    const {handleSubmit, pristine,reset, submitting} = props
-    return (
-        <form onSubmit={handleSubmit}>
+        return (
+
+        <form onSubmit={onHandleSubmit}>
             <div>
                 <label>title</label>
                 <Field
-                    name="title"
-
+                    name={"title"+iterationId}
                     component="input"
                     type="text"
                     placeholder="Title"
                 />
             </div>
             <div>
-                <label>title</label>
+                <label>Start Date</label>
                 <Field
-                    name="startDate"
+                    name={"startDate" + iterationId}
                     component="input"
                     type="date"
                     placeholder="Start Date"
                 />
             </div>
             <div>
-                <label>title</label>
+                <label>Expire Date</label>
                 <Field
-                    name="expireDate"
+                    name={"expireDate" + iterationId}
                     component="input"
                     type="date"
                     placeholder="Expire Date"
@@ -44,9 +42,10 @@ const AddStory = props => {
                 </button>
             </div>
         </form>
-    )
-}
+    )}
 
 export default reduxForm({
     form: 'newIteration',
 })(AddStory)
+
+//export default connect()(AddStory)

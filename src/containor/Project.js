@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
-import AddStory from '../component/AddIStory'
-import {addNewIterationAction} from "../action/actions";
-import ShowIterations from './ShowIterations'
+import {addStoryAction} from "../action/actions";
+import ShowIteration from './ShowIteration'
 import {connect} from 'react-redux'
+import AddIteration from "./AddIteration";
 
 class Project extends Component{
 
@@ -13,15 +13,15 @@ class Project extends Component{
 
     handleAddIteration(values){
 
-        this.props.dispatch(addNewIterationAction(values.title,values.startDate,values.expireDate))
+        this.props.dispatch(addStoryAction(values.iterationId,values.title,values.startDate,values.expireDate))
 
     }
 
     render(){
         return(
             <div>
-                <AddStory onSubmit={this.handleAddIteration} />
-                <ShowIterations/>
+                <AddIteration/>
+                <ShowIteration/>
             </div>
         )
     }
