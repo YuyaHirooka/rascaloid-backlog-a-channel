@@ -21,7 +21,9 @@ const mapDispatchTodoProps = dispatch => {
             dispatch(sortStoryAction(sortedStory))
         },
         addStory:values => {
-            dispatch(addStoryAction(0, values,values,values))
+          let iterationId = Object.keys(values)[0].split(':')[1];
+          console.log(iterationId);
+            dispatch(addStoryAction(Number.parseInt(iterationId), values['title0'],values['startDate0'],values['expireDate0']))
         }
     }
 }

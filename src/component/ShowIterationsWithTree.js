@@ -1,7 +1,7 @@
 import React from 'react'
 import 'react-sortable-tree/style.css'
 import SortableTree from 'react-sortable-tree'
-import AddStory from './AddIStory'
+import AddStory from './AddStory'
 
 
 const ShowIterationsWithTree = ({iteration,addStory, onChangeHandle}) => {

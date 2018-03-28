@@ -12,9 +12,6 @@ let iterationId=0
 
 
 export function addStoryAction(iterationIdToAddStory, title, startDate, expireDate){
-    console.log("addstoryaction")
-    console.log(title)
-    console.log(iterationIdToAddStory)
     return{
         type:ADD_STORY,
         iterationId: iterationIdToAddStory,

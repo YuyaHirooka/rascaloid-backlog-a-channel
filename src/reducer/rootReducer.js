@@ -5,7 +5,7 @@ import iterations from './AddItarationReducer'
 
 const reducer = combineReducers({
     form:reduxFormReducer,
-    stories,
+    // stories,
     iterations,
 })
 

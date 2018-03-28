@@ -22,7 +22,7 @@ let AddIteration =({dispatch})=>{
                     }}
                     />
                 <button type="submit">
-                    Add Todo
+                    Add Iteration
                 </button>
             </form>
         </div>
