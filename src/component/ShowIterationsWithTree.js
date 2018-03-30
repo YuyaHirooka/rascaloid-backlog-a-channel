@@ -6,14 +6,23 @@ import AddStory from './AddStory'
 class ShowIterationsWithTree extends Component {
   render() {
     return (
-      <div>
-        <AddStory onSubmit={this.props.addStory} iterationId={this.props.iteration.iterationId}/>
+      <div style={{
+        border: 'solid 1px black',
+        width: 700,
+        marginTop: '2px',
+        marginBottom: '2px'
+      }}>
+        <div style={{
+          backgroundColor: '#dddddd',
+          width: '100%'
+        }}>
+          <h4 style={{margin: 0}}>{this.props.iteration.iterationTitle}</h4>
+          <AddStory onSubmit={this.props.addStory} iterationId={this.props.iteration.iterationId}/>
+        </div>
         <div
           style={{
-            height: 500,
-            width: 700,
-            float: 'left',
-            border: 'solid black 1px',
+            height: this.props.iteration.story.length === 0 ? 70 : this.props.iteration.story.length * 62 + 8,
+            width: '100%'
           }}
         >
           <SortableTree
