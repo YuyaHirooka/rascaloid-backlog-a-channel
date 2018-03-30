@@ -16,16 +16,15 @@ const mapStateIterations = state => {
 }
 
 const mapDispatchTodoProps = dispatch => {
-    return {
-        onChangeHandle: sortedStory => {
-            dispatch(sortStoryAction(sortedStory))
-        },
-        addStory:values => {
-          let iterationId = Object.keys(values)[0].split(':')[1];
-          console.log(iterationId);
-            dispatch(addStoryAction(Number.parseInt(iterationId), values['title0'],values['startDate0'],values['expireDate0']))
-        }
+  return {
+    onHandleChange: (iterationId, sortedStory) => {
+      dispatch(sortStoryAction(iterationId, sortedStory))
+    },
+    addStory: (values, action, form) => {
+      let iterationId = form.iterationId;
+      dispatch(addStoryAction(Number.parseInt(iterationId), values['title:' + iterationId], values['startDate:' + iterationId], values['expireDate:' + iterationId]))
     }
+  }
 }
 
 const ShowIteration = connect(

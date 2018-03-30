@@ -2,8 +2,6 @@ import {ADD_ITERATION, ADD_STORY, SORT_STORY} from '../action/actions'
 
 
 function iterations(state = [], action) {
-  console.log("aaaaaaaaaaaaaaaa")
-  console.log(state)
   switch (action.type) {
     case ADD_ITERATION:
       return [
@@ -15,8 +13,6 @@ function iterations(state = [], action) {
         }]
     case ADD_STORY:
       return state.map((iteration) => {
-        console.log(iteration);
-        console.log(action);
         if (iteration.iterationId === action.iterationId) {
           return Object.assign({}, iteration, {
             story:[
@@ -32,11 +28,14 @@ function iterations(state = [], action) {
         return iteration;
       })
     case SORT_STORY:
-      return Object.assign({}, state, {
-        projectId: state.projectId,
-        story: action.sortedStory,
+      return state.map( (iteration) => {
+        if (iteration.iterationId === action.iterationId) {
+          return Object.assign({}, iteration, {
+            story: action.sortedStory
+          })
+        }
+        return iteration
       })
-
     default:
       return state
   }

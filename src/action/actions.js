@@ -21,9 +21,10 @@ export function addStoryAction(iterationIdToAddStory, title, startDate, expireDa
     }
 }
 
-export function sortStoryAction(sortedStory) {
+export function sortStoryAction(iterationId, sortedStory) {
     return{
         type:SORT_STORY,
+        iterationId,
         sortedStory
     }
 }
