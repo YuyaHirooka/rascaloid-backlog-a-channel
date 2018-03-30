@@ -3,16 +3,15 @@ import ShowIterations from "../component/ShowIterations"
 import {sortStoryAction, addStoryAction} from '../action/actions'
 // todo:add taggle
 
-
 const getIterations = iterations => {
-    //todo: return でプロジェクトを取りに行くようにする
-    return iterations
+  //todo: return でプロジェクトを取りに行くようにする
+  return iterations
 }
 
 const mapStateIterations = state => {
-    return {
-        iterations: getIterations(state.iterations)
-    }
+  return {
+    iterations: getIterations(state.iterations)
+  }
 }
 
 const mapDispatchTodoProps = dispatch => {

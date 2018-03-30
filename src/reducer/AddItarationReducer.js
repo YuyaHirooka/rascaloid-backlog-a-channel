@@ -15,7 +15,7 @@ function iterations(state = [], action) {
       return state.map((iteration) => {
         if (iteration.iterationId === action.iterationId) {
           return Object.assign({}, iteration, {
-            story:[
+            story: [
               ...iteration.story,
               {
                 title: action.title + " " + action.startDate +
@@ -28,7 +28,7 @@ function iterations(state = [], action) {
         return iteration;
       })
     case SORT_STORY:
-      return state.map( (iteration) => {
+      return state.map((iteration) => {
         if (iteration.iterationId === action.iterationId) {
           return Object.assign({}, iteration, {
             story: action.sortedStory

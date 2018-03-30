@@ -7,13 +7,13 @@ import rootReducer from './reducer/rootReducer'
 const loggerMiddleware = createLogger()
 
 export default function config(preLoadedState) {
-    return createStore(
-        rootReducer,
-        preLoadedState,
-        applyMiddleware(
-            thunkMiddle,
-            loggerMiddleware,
-        ),
-    )
+  return createStore(
+      rootReducer,
+      preLoadedState,
+      applyMiddleware(
+          thunkMiddle,
+          loggerMiddleware,
+      ),
+  )
 }
 
