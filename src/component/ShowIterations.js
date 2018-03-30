@@ -1,17 +1,17 @@
-import React from 'react'
+import React, {Component} from 'react'
 import ShowIterationsWithTree from './ShowIterationsWithTree'
-import iterations from "../reducer/AddItarationReducer";
 
-
-const ShowIterations=({iterations,onHandleChange,addStory})=>{
-    {return(iterations.map((iteration)=>(
+class ShowIterations extends Component {
+  render() {
+    return (this.props.iterations.map((iteration) => (
         <ShowIterationsWithTree
             key={iteration.iterationId}
             iteration={iteration}
-            onHandleChange={onHandleChange}
-            addStory={addStory}
+            onHandleChange={this.props.onHandleChange}
+            addStory={this.props.addStory}
         />
-    )))}
+    )))
+  }
 }
 
 export default ShowIterations
