@@ -1,11 +1,10 @@
 import {reducer as reduxFormReducer} from 'redux-form';
 import {combineReducers} from "redux"
-import AddIterationReducer from './AddIterationReducer'
+import iterations from './AddItarationReducer'
 
 const reducer = combineReducers({
     form:reduxFormReducer,
-    AddIterationReducer,
-
+    iterations,
 })
 
 export default reducer

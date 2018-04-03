@@ -1,39 +1,40 @@
 //import fetch from 'cross-fetch'
 
-export const GET_ITERATION_BY_PROJECT_ID = 'GET_ITERATION_BY_PROJECT_ID'
-export const ADD_NEW_ITERATION = 'ADD_NEW_ITERATION'
-export const EDIT_THE_ITERATION = 'EDIT_THE_ITERATION'
-export const CONTROL_EDITER = 'CONTROL_EDITOR'
-
+export const ADD_STORY = 'ADD_STORY'
+export const SORT_STORY = 'SORT_STORY'
+export const ADD_ITERATION = 'ADD_ITERATION'
 //todo:id採番について考える。
 //todo:projectについて考える。
-let iterationId=0
+let iterationId = 0
 
-export function  getIterationByProjectIdAction(projectId) {
-    return{
-        type:GET_ITERATION_BY_PROJECT_ID,
-        projectId,
-    }
+
+export function addStoryAction(iterationIdToAddStory, title, startDate, expireDate) {
+  return {
+    type: ADD_STORY,
+    iterationId: iterationIdToAddStory,
+    title,
+    startDate,
+    expireDate,
+  }
+}
+
+export function sortStoryAction(iterationId, sortedStory) {
+  return {
+    type: SORT_STORY,
+    iterationId,
+    sortedStory
+  }
+}
+
+export function addIterationAction(iterationTitle) {
+  return {
+    type: ADD_ITERATION,
+    iterationId: iterationId++,
+    iterationTitle,
+  }
+
 }
 
 
-
-export function addNewIterationAction(title,startDate,expireDate){
-    return{
-        type:ADD_NEW_ITERATION,
-        id:iterationId++,
-        title,
-        startDate,
-        expireDate,
-    }
-}
-
-
-export function editTheItarationAction(iterationId) {
-    return{
-        type:EDIT_THE_ITERATION,
-        iterationId
-    }
-}
 
 
